@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Alberto Dev Portfolio
+  </title>
+  <meta name="description" content="Portfolio Alberto Martinez" />
+  <meta name="author" content="Alberto Martinez" />
+  <link href="/dist/output.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/f1524c8187.js" crossorigin="anonymous"></script>
+  <!-- <script src="js/index.js"></script> -->
+</head>
+
+<body class="bg-gray-900 leading-normal tracking-normal text-white gradient">
+  <!--Nav-->
+  <nav id="header" class="fixed w-full z-30 top-0 text-white">
+    <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+      <div class="pl-4 flex items-center">
+        <a class="flex items-center">
+          <img src="img/logo-albertodev.png" class="h-6 mr-2 sm:h-9" alt="Alberto Dev Logo" />
+          <span class="text-xl font-bold">.DEV</span>
+        </a>
+      </div>
+      <div class="block lg:hidden pr-4">
+        <button id="nav-toggle"
+          class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+          <i class="fa-solid fa-bars text-2xl">
+            <title>Menu</title>
+          </i>
+        </button>
+      </div>
+      <div
+        class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 lg:bg-transparent p-4 lg:p-0 z-20"
+        id="nav-content">
+        <ul class="list-reset lg:flex justify-end flex-1 items-center">
+          <li class="mr-3">
+            <a class="inline-block py-2 px-4 text-white font-bold no-underline" href="#">Home</a>
+          </li>
+          <li class="mr-3">
+            <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+              href="#">About</a>
+          </li>
+          <li class="mr-3">
+            <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+              href="#">Skills</a>
+          </li>
+          <li class="mr-3">
+            <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+              href="#">Experience</a>
+          </li>
+          <li class="mr-3">
+            <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+              href="#">Portfolio</a>
+          </li>
+          <li class="mr-3">
+            <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+              href="#">Contact</a>
+          </li>
+        </ul>
+        <!-- <button id="navAction"
+          class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+          Action
+        </button> -->
+      </div>
+    </div>
+    <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+    </div>
+    </div>
+  </nav>
+  <!--Hero-->
+  <div class="pt-24">
+    <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+      <!-- Left Side -->
+      <div>
+        <h1 class="my-4 text-5xl font-bold leading-tight">Web Developer</h1>
+        <h2 class="leading-normal text-2xl mb-8">Alberto Martinez</h2>
+        <p class="leading-normal text-2xl mb-8">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium, minus iure ipsa sed architecto itaque eaque nulla ipsum sequi officia dignissimos eveniet recusandae numquam unde perspiciatis veritatis quo. Unde, reprehenderit.</p>
+      </div>
+      <!-- Right Side -->
+      <div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery if you need it
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  -->
+  <script>
+    var scrollpos = window.scrollY;
+    var header = document.getElementById("header");
+    var navcontent = document.getElementById("nav-content");
+    var navaction = document.getElementById("navAction");
+    var brandname = document.getElementById("brandname");
+    var toToggle = document.querySelectorAll(".toggleColour");
+
+    document.addEventListener("scroll", function () {
+      /*Apply classes for slide in bar*/
+      scrollpos = window.scrollY;
+
+      if (scrollpos > 10) {
+        header.classList.add("bg-white");
+        navaction.classList.remove("bg-white");
+        navaction.classList.add("gradient");
+        navaction.classList.remove("text-gray-800");
+        navaction.classList.add("text-white");
+        //Use to switch toggleColour colours
+        for (var i = 0; i < toToggle.length; i++) {
+          toToggle[i].classList.add("text-gray-800");
+          toToggle[i].classList.remove("text-white");
+        }
+        header.classList.add("shadow");
+        navcontent.classList.remove("bg-gray-100");
+        navcontent.classList.add("bg-white");
+      } else {
+        header.classList.remove("bg-white");
+        navaction.classList.remove("gradient");
+        navaction.classList.add("bg-white");
+        navaction.classList.remove("text-white");
+        navaction.classList.add("text-gray-800");
+        //Use to switch toggleColour colours
+        for (var i = 0; i < toToggle.length; i++) {
+          toToggle[i].classList.add("text-white");
+          toToggle[i].classList.remove("text-gray-800");
+        }
+
+        header.classList.remove("shadow");
+        navcontent.classList.remove("bg-white");
+        navcontent.classList.add("bg-gray-100");
+      }
+    });
+  </script>
+  <script>
+    /*Toggle dropdown list*/
+    /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+
+    var navMenuDiv = document.getElementById("nav-content");
+    var navMenu = document.getElementById("nav-toggle");
+
+    document.onclick = check;
+    function check(e) {
+      var target = (e && e.target) || (event && event.srcElement);
+
+      //Nav Menu
+      if (!checkParent(target, navMenuDiv)) {
+        // click NOT on the menu
+        if (checkParent(target, navMenu)) {
+          // click on the link
+          if (navMenuDiv.classList.contains("hidden")) {
+            navMenuDiv.classList.remove("hidden");
+          } else {
+            navMenuDiv.classList.add("hidden");
+          }
+        } else {
+          // click both outside link and outside menu, hide menu
+          navMenuDiv.classList.add("hidden");
+        }
+      }
+    }
+    function checkParent(t, elm) {
+      while (t.parentNode) {
+        if (t == elm) {
+          return true;
+        }
+        t = t.parentNode;
+      }
+      return false;
+    }
+  </script>
+</body>
+
+</html>
