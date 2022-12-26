@@ -26,37 +26,38 @@
       </div>
       <div class="block lg:hidden pr-4">
         <button id="nav-toggle"
-          class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+          class="flex items-center p-1 text-orange-400 hover:text-white focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
           <i class="fa-solid fa-bars text-2xl">
             <title>Menu</title>
           </i>
         </button>
       </div>
       <div
-        class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 lg:bg-transparent p-4 lg:p-0 z-20"
+        class="w-full flex-grow lg:flex bg-gray-900 lg:items-center lg:w-auto hidden mt-2 lg:mt-0 lg:bg-transparent p-4 lg:p-0 z-20"
         id="nav-content">
         <ul class="list-reset lg:flex justify-end flex-1 items-center">
           <li class="mr-3">
-            <a class="inline-block py-2 px-4 text-white font-bold no-underline" href="#">Home</a>
+            <a class="inline-block text-white no-underline hover:text-orange-400 hover:text-underline py-2 px-4"
+              href="#">Home</a>
           </li>
           <li class="mr-3">
-            <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+            <a class="inline-block text-white no-underline hover:text-orange-400 hover:text-underline py-2 px-4 "
               href="#">About</a>
           </li>
           <li class="mr-3">
-            <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+            <a class="inline-block text-white no-underline hover:text-orange-400 hover:text-underline py-2 px-4 "
               href="#">Skills</a>
           </li>
           <li class="mr-3">
-            <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+            <a class="inline-block text-white no-underline hover:text-orange-400 hover:text-underline py-2 px-4 "
               href="#">Experience</a>
           </li>
           <li class="mr-3">
-            <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+            <a class="inline-block text-white no-underline hover:text-orange-400 hover:text-underline py-2 px-4 "
               href="#">Portfolio</a>
           </li>
           <li class="mr-3">
-            <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+            <a class="inline-block text-white no-underline hover:text-orange-400 hover:text-underline py-2 px-4 "
               href="#">Contact</a>
           </li>
         </ul>
@@ -71,29 +72,36 @@
     </div>
   </nav>
   <!--Hero-->
-  <div class="pt-24">
-    <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+  <div class="mt-24 lg:py-10 px-4">
+    <div class="container grid lg:grid-cols-2 items-center justify-items-center m-auto">
       <!-- Left Side -->
-      <div>
-        <h1 class="my-4 text-5xl font-bold leading-tight">Web Developer</h1>
-        <h2 class="leading-normal text-2xl mb-8">Alberto Martinez</h2>
-        <p class="leading-normal text-2xl mb-8">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium, minus iure ipsa sed architecto itaque eaque nulla ipsum sequi officia dignissimos eveniet recusandae numquam unde perspiciatis veritatis quo. Unde, reprehenderit.</p>
+      <div class="container">
+        <p class="uppercase">Alberto Martinez</p>
+        <h1 class="text-4xl font-bold mb-3 md:text-7xl text-orange-600"">
+          Web Developer
+        </h1>
+        <p class=" leading-normal text-2xl mb-3">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.Adipisci, tempore quos! Magnam officia voluptate
+          sequi.Adipisci, tempore quos! Magnam officia voluptate sequi
+          </p>
+          <button
+            class="lg:mx-0 hover:underline bg-orange-400 text-white text-lg font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+            About Me
+          </button>
       </div>
       <!-- Right Side -->
-      <div>
-
+      <div class="order-1 lg:order-2">
+        <img class="" src="img/ImgHero.png" alt="hero image">
       </div>
     </div>
   </div>
 
-  <!-- jQuery if you need it
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  -->
+  <!-- SCRIPTS -->
   <script>
     var scrollpos = window.scrollY;
     var header = document.getElementById("header");
     var navcontent = document.getElementById("nav-content");
-    var navaction = document.getElementById("navAction");
+    // var navaction = document.getElementById("navAction");
     var brandname = document.getElementById("brandname");
     var toToggle = document.querySelectorAll(".toggleColour");
 
@@ -102,11 +110,11 @@
       scrollpos = window.scrollY;
 
       if (scrollpos > 10) {
-        header.classList.add("bg-white");
-        navaction.classList.remove("bg-white");
-        navaction.classList.add("gradient");
-        navaction.classList.remove("text-gray-800");
-        navaction.classList.add("text-white");
+        header.classList.add("bg-gray-900");
+        // navaction.classList.remove("bg-white");
+        // navaction.classList.add("gradient");
+        // navaction.classList.remove("text-gray-800");
+        // navaction.classList.add("text-white");
         //Use to switch toggleColour colours
         for (var i = 0; i < toToggle.length; i++) {
           toToggle[i].classList.add("text-gray-800");
@@ -117,10 +125,10 @@
         navcontent.classList.add("bg-white");
       } else {
         header.classList.remove("bg-white");
-        navaction.classList.remove("gradient");
-        navaction.classList.add("bg-white");
-        navaction.classList.remove("text-white");
-        navaction.classList.add("text-gray-800");
+        // navaction.classList.remove("gradient");
+        // navaction.classList.add("bg-white");
+        // navaction.classList.remove("text-white");
+        // navaction.classList.add("text-gray-800");
         //Use to switch toggleColour colours
         for (var i = 0; i < toToggle.length; i++) {
           toToggle[i].classList.add("text-white");
